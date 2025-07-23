@@ -7,12 +7,12 @@ public class stack_remove_consecutive_subsequences {
         st.push(arr[0]);
         for(int i=1;i<arr.length;i++){//2
             if(!st.isEmpty()&&st.peek()==arr[i]){
-                int x=i+1;
-                while(x<arr.length&&st.peek()==arr[x]){
-                    x++;
+
+                while(i<arr.length&&st.peek()==arr[i]){
+                    i++;
                 }
                 st.pop();
-                i=x-1;
+                i--;
             }
             else{
                 st.push(arr[i]);
